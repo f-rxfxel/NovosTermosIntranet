@@ -44,14 +44,14 @@ a > button {
     border-radius: 50px;
 }
 
-button:hover, .steps:hover {
+button:hover,
+.steps:hover {
     cursor: pointer;
 }
 
 /*
     AO AVANÇAR OU RETORNAR,
     TROCAR AS PROPRIEDADES.
-
 .button {
     height: 35px;
     width: 35px;
@@ -59,30 +59,71 @@ button:hover, .steps:hover {
     background-color: #30553a;
     border: solid #30553a 5px;
 }
-
 .span {
     font-weight: 700;
 }
-
 */
 
 section {
     display: flex;
     flex-direction: row;
-    justify-content:space-around; /* ESPAÇO IRREGULAR ENTRE OS STEPS */
+    justify-content: space-around; /* ESPAÇO IRREGULAR ENTRE OS STEPS */
     padding: 10px 10%;
 }
 
 .green-line {
     margin: 15px auto;
     width: 75%;
-    border: 1px solid #30553A;
+    border: 1px solid #30553a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+form > input {
+    height: 40px;
+    padding: 5px 15px;
+    margin: 15px 0px;
+    font-size: 20px;
+    border: 1px solid #606062;
+    border-radius: 5px;
+    font-family: "Sarala", Helvetica, Arial;
+    font-weight: 400;
+}
+
+::placeholder {
+    color: #606062;
+    opacity: 0.7;
+}
+
+.nav-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.nav-buttons > button {
+    height: 55px;
+    width: 47%;
+    margin: 15px 0px;
+    font-family: "Sarala", Helvetica, Arial;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    background-color: #30553a;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
 }
 
 /* Responsividade */
 
 @media (max-width: 1000px) {
-
     .logo {
         width: 90px;
     }
@@ -101,7 +142,7 @@ section {
         font-size: 17px;
     }
 
-    a > button { 
+    a > button {
         font-size: 15px;
         border-width: 2px;
     }
@@ -109,10 +150,46 @@ section {
     .green-line {
         margin: 0px auto;
     }
+
+    form > input {
+        height: 35px;
+        padding: 5px 15px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+        font-size: 17px;
+        border: 1px solid #606062;
+        border-radius: 5px;
+    }
+
+    .nav-buttons > button {
+        font-size: 17px;
+        font-weight: 400;
+    }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 600px) {
 
-    /* Exibir apenas o step atual */
+    body {
+        margin: auto auto;
+    }
 
+    section {
+        justify-content: center;
+    }
+
+    .steps {
+        padding: 10px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .nav-buttons {
+        width: 80%;
+    }
+
+    .steps > .step > span {
+        display: none;
+    }
 }
