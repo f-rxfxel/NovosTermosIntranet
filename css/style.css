@@ -130,6 +130,13 @@ input:focus {
     border: none;
     border-radius: 10px;
     text-transform: uppercase;
+    transition: .2s;
+}
+
+.nav-buttons > button:hover {
+    background-color: #ffffff;
+    color: #30553a;
+    border: 1px solid #30553a;
 }
 
 /* Responsividade */
@@ -203,5 +210,14 @@ input:focus {
 
     .steps > .step > span {
         display: none;
+    }
+
+    .current-step > span {
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .logo {
+        width: 70px;
     }
 }
