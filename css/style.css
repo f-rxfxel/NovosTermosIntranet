@@ -7,14 +7,14 @@
 
 .logo {
     display: block;
-    width: 120px;
+    width: 100px;
     margin: auto;
 }
 
 h1 {
     font-family: "Sarala", Helvetica, Arial;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     color: #606062;
 }
@@ -139,11 +139,46 @@ input:focus {
     border: 1px solid #30553a;
 }
 
+.container {
+    display: flex;
+}
+
+textarea {
+    display: block;
+    width: 70%;
+    margin: auto;
+    height: 45vh;
+    overflow-y: scroll;
+    resize: none;
+    border: 1px solid #606062;
+    border-radius: 7px;
+    color: #606062;
+    font-size: 17px;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #606062 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #606062;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+  }
+
 /* Responsividade */
 
 @media (max-width: 1000px) {
     .logo {
-        width: 90px;
+        width: 80px;
     }
 
     h1 {
@@ -218,6 +253,6 @@ input:focus {
     }
 
     .logo {
-        width: 70px;
+        width: 60px;
     }
 }
