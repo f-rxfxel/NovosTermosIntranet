@@ -103,7 +103,7 @@ form > input {
 input:focus {
     outline: #30553a solid 2px;
     color: #606062;
-    border: none
+    border: none;
 }
 
 ::placeholder {
@@ -130,7 +130,7 @@ input:focus {
     border: none;
     border-radius: 10px;
     text-transform: uppercase;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .nav-buttons > button:hover {
@@ -141,38 +141,117 @@ input:focus {
 
 .container {
     display: flex;
+    flex-direction: column;
 }
 
 textarea {
     display: block;
     width: 70%;
-    margin: auto;
+    margin: 15px auto;
     height: 45vh;
     overflow-y: scroll;
     resize: none;
     border: 1px solid #606062;
-    border-radius: 7px;
+    border-radius: 6px;
     color: #606062;
     font-size: 17px;
+    font-family: "Sarala", Helvetica, Arial;
+    outline: none;
+    padding: 5px;
+}
+
+.custom-checkbox > label {
+    font-family: "Sarala", Helvetica, Arial;
+    color: #606062;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.custom-checkbox {
+    margin: auto;
+}
+
+.custom-checkbox input,
+.custom-radio input {
+    display: none;
+}
+
+.custom-checkbox input + label:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #30553a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.custom-checkbox input:checked + label:before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #30553a;
+    background-position: center;
+    border: none;
+    padding: 1px;
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
+/* Firefox */
+* {
     scrollbar-width: thin;
     scrollbar-color: #606062 #ffffff;
-  }
+}
 
-  /* Chrome, Edge, and Safari */
-  textarea::-webkit-scrollbar {
-    width: 10px;
-  }
+/* Chrome, Edge, and Safari */
+textarea::-webkit-scrollbar {
+    width: 9px;
+}
 
-  textarea::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar-thumb {
     background-color: #606062;
     border-radius: 20px;
     border: 3px solid #ffffff;
-  }
+}
+
+p {
+    font-family: "Sarala", Helvetica, Arial;
+    color: #606062;
+    font-size: 20px;
+    font-weight: 400;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.pdfs > span {
+    color: #30553a;
+    font-size: 40px;
+}
+
+.download {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pdfs {
+    display: flex;
+    align-items: center;
+    border: 2px solid #30553a;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px;
+    width: 350px;
+}
+
+.pdfs > a {
+    font-family: "Sarala", Helvetica, Arial;
+    color: #606062;
+    font-size: 20px;
+    font-weight: 400;
+}
 
 /* Responsividade */
 
@@ -218,17 +297,30 @@ textarea {
         font-size: 17px;
         font-weight: 400;
     }
+
+    .custom-checkbox > label {
+        font-size: 17px;
+        padding: 0px 20px;
+    }
+
+    .download {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        margin: 15px auto;
+    }
 }
 
 @media (max-width: 600px) {
-
     body {
         margin: auto auto;
     }
 
     section {
-        justify-content:center;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
     }
 
     .steps {
@@ -254,5 +346,34 @@ textarea {
 
     .logo {
         width: 60px;
+    }
+
+    textarea {
+        width: 85%;
+    }
+
+    div.custom-checkbox {
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        padding: 0px 7.5%;
+    }
+
+    p {
+        margin: 5px auto;
+        width: 80%;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .pdfs {
+        flex-direction: column;
+        width: 160px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .pdfs > a {
+        font-size: 17px;
     }
 }
